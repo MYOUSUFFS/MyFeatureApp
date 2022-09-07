@@ -68,6 +68,23 @@ class _MyhomeState extends State<Myhome> {
               },
               child: const Text('Click To Login'),
             ),
+            heightShotCut(10),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                // Foreground color
+                onPrimary: Theme.of(context).colorScheme.onPrimary,
+                // Background color
+                primary: Theme.of(context).colorScheme.primary,
+              ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const PdfDownloader(),
+                  ),
+                );
+              },
+              child: const Text('Click TO Flight API Screen'),
+            ),
           ],
         ),
       ),
