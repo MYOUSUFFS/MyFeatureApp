@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:retry_build_api/screens/bec_api.dart';
 import 'package:retry_build_api/screens/pdf_downloaded.dart';
 
 import '../flight_api_screen.dart';
@@ -54,6 +55,23 @@ class _MyFeatureState extends State<MyFeature> {
                   );
                 },
                 child: const Text('Click TO Flight API Screen'),
+              ),
+              heightShotCut(10),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  // Foreground color
+                  onPrimary: Theme.of(context).colorScheme.onPrimary,
+                  // Background color
+                  primary: Colors.red,
+                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const MyJobs(),
+                    ),
+                  );
+                },
+                child: const Text('BEC Job Screen'),
               ),
             ],
           ),
