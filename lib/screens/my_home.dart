@@ -55,9 +55,7 @@ class _MyhomeState extends State<Myhome> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 // Foreground color
-                onPrimary: Theme.of(context).colorScheme.onPrimary,
-                // Background color
-                primary: Theme.of(context).colorScheme.primary,
+                foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Theme.of(context).colorScheme.primary,
               ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
               onPressed: () {
                 Navigator.of(context).push(
