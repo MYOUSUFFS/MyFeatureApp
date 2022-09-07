@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:retry_build_api/screens/pdf_downloaded.dart';
 
-import 'flight_api_screen.dart';
-import 'my_home.dart';
+import '../flight_api_screen.dart';
+import '../my_home.dart';
 
 class MyFeature extends StatefulWidget {
   const MyFeature({Key? key}) : super(key: key);
@@ -44,7 +44,7 @@ class _MyFeatureState extends State<MyFeature> {
                   // Foreground color
                   onPrimary: Theme.of(context).colorScheme.onPrimary,
                   // Background color
-                  primary: Theme.of(context).colorScheme.primary,
+                  primary: Colors.amber,
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
                   Navigator.of(context).push(

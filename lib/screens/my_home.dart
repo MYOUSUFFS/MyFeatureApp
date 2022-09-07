@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:retry_build_api/screens/flight_api_screen.dart';
-import 'package:retry_build_api/screens/my_feature.dart';
+import 'package:retry_build_api/screens/master.dart/my_feature.dart';
 
 class Myhome extends StatefulWidget {
   const Myhome({Key? key}) : super(key: key);
