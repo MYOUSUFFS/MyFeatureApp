@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retry_build_api/screens/flight_api_screen.dart';
 import 'package:retry_build_api/screens/pdf_downloaded.dart';
 
 class Myhome extends StatefulWidget {
@@ -79,7 +80,7 @@ class _MyhomeState extends State<Myhome> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const PdfDownloader(),
+                    builder: (context) => const MyFlightApi(),
                   ),
                 );
               },
