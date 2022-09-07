@@ -16,9 +16,9 @@ class PdfDownloader extends StatefulWidget {
 class _PdfDownloaderState extends State<PdfDownloader> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
           child: TextButton(
             onPressed: _dowPdf,
             style: ButtonStyle(
