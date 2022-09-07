@@ -13,7 +13,11 @@ class _MyFlightApiState extends State<MyFlightApi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Center(child: Text("Comming"))),
+      body: SafeArea(
+        child: Center(
+          child: Text("Comming"),
+        ),
+      ),
     );
   }
 }
