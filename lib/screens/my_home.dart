@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:retry_build_api/screens/pdf_downloaded.dart';
+import 'package:retry_build_api/screens/master.dart/my_feature.dart';
 
 class Myhome extends StatefulWidget {
   const Myhome({Key? key}) : super(key: key);
@@ -55,35 +55,16 @@ class _MyhomeState extends State<Myhome> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 // Foreground color
-                onPrimary: Theme.of(context).colorScheme.onPrimary,
-                // Background color
-                primary: Theme.of(context).colorScheme.primary,
+                foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Theme.of(context).colorScheme.primary,
               ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const PdfDownloader(),
+                    builder: (context) => const MyFeature(),
                   ),
                 );
               },
               child: const Text('Click To Login'),
-            ),
-            heightShotCut(10),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                // Foreground color
-                onPrimary: Theme.of(context).colorScheme.onPrimary,
-                // Background color
-                primary: Theme.of(context).colorScheme.primary,
-              ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const PdfDownloader(),
-                  ),
-                );
-              },
-              child: const Text('Click TO Flight API Screen'),
             ),
           ],
         ),
