@@ -5,7 +5,7 @@ import 'package:retry_build_api/screens/bec_api.dart';
 import 'package:retry_build_api/screens/pdf_downloaded.dart';
 
 import '../flight_api_screen.dart';
-import '../my_home.dart';
+import '../login_page.dart';
 
 class MyFeature extends StatefulWidget {
   const MyFeature({Key? key}) : super(key: key);
@@ -23,11 +23,31 @@ class _MyFeatureState extends State<MyFeature> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
+              TextButton(
+                style: TextButton.styleFrom(
+                  // Foreground color
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                  backgroundColor: Colors.blueAccent.shade400,
+                  minimumSize: Size.fromHeight(50),
+                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const MyLogIn(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Login Page',
+                ),
+              ),
+              heightShotCut(10),
+              TextButton(
+                style: TextButton.styleFrom(
                   // Foreground color
                   foregroundColor: Theme.of(context).colorScheme.onPrimary,
                   backgroundColor: Theme.of(context).colorScheme.primary,
+                  minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
                   Navigator.of(context).push(
@@ -36,14 +56,17 @@ class _MyFeatureState extends State<MyFeature> {
                     ),
                   );
                 },
-                child: const Text('Create Pdf, Download and open'),
+                child: const Text(
+                  'Pdf => Create Download open',
+                ),
               ),
               heightShotCut(10),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
+              TextButton(
+                style: TextButton.styleFrom(
                   // Foreground color
                   foregroundColor: Theme.of(context).colorScheme.onPrimary,
                   backgroundColor: Colors.amber,
+                  minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
                   Navigator.of(context).push(
@@ -52,14 +75,16 @@ class _MyFeatureState extends State<MyFeature> {
                     ),
                   );
                 },
-                child: const Text('Click TO Flight API Screen'),
+                child: const Text(
+                  'Click TO Flight API Screen',
+                ),
               ),
               heightShotCut(10),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
+              TextButton(
+                style: TextButton.styleFrom(
                   // Foreground color
                   foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.red, minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
                   Navigator.of(context).push(
@@ -68,7 +93,9 @@ class _MyFeatureState extends State<MyFeature> {
                     ),
                   );
                 },
-                child: const Text('BEC Job Screen'),
+                child: const Text(
+                  'BEC Job Screen',
+                ),
               ),
             ],
           ),

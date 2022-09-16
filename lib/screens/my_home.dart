@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retry_build_api/screens/login_page.dart';
 import 'package:retry_build_api/screens/master.dart/my_feature.dart';
 
 class Myhome extends StatefulWidget {
@@ -12,70 +13,24 @@ class _MyhomeState extends State<Myhome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: homePageFunction(),
+      body: welcomeScreen(),
     );
   }
 
-  SafeArea homePageFunction() {
+  SafeArea welcomeScreen() {
     return SafeArea(
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text("Email"),
-                heightShotCut(10),
-                const TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-              ],
-            ),
-            heightShotCut(10),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text("Password"),
-                heightShotCut(10),
-                const TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-              ],
-            ),
-            heightShotCut(10),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                // Foreground color
-                foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Theme.of(context).colorScheme.primary,
-              ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const MyFeature(),
-                  ),
-                );
-              },
-              child: const Text('Click To Login'),
-            ),
-          ],
+      child: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: ((context) => MyFeature()),
+              ),
+            );
+          },
+          child: Text("Welcome"),
         ),
       ),
     );
   }
 }
-
-SizedBox heightShotCut(double x) => SizedBox(
-      height: x,
-    );
-SizedBox widthShotCut(double x) => SizedBox(
-      width: x,
-    );
