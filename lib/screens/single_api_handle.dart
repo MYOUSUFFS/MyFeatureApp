@@ -1,4 +1,8 @@
 // ignore_for_file: prefer_const_constructors
+//TODO this is local data set your system{
+//   "name": "Yousuff",
+//   "phone_number": 1234567890
+// }
 
 import 'dart:convert';
 
@@ -47,9 +51,9 @@ class _SingleAPIdataState extends State<SingleAPIdata> {
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    //TODO This is New version
-                    Text("${singleApi.column1}"),
-                    Text("${singleApi.id}"),
+                    //TODO This is New version is ${data.name} like this
+                    Text("${singleApi.name}"),
+                    Text("${singleApi.phoneNumber}"),
                     Image.asset(
                       'assets/appIconAndroid.png',
                       width: 50,

@@ -10,20 +10,20 @@ String singleApiToJson(SingleApi data) => json.encode(data.toJson());
 
 class SingleApi {
   SingleApi({
-    this.id,
-    this.column1,
+    this.name,
+    this.phoneNumber,
   });
 
-  int? id;
-  String? column1;
+  String? name;
+  int? phoneNumber;
 
   factory SingleApi.fromJson(Map<String, dynamic> json) => SingleApi(
-        id: json["id"],
-        column1: json["Column 1"],
+        name: json["name"],
+        phoneNumber: json["phone_number"],
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "Column 1": column1,
+        "name": name,
+        "phone_number": phoneNumber,
       };
 }
