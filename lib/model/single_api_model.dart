@@ -1,12 +1,29 @@
-import 'package:json_annotation/json_annotation.dart';
-part 'single_api_model.g.dart';
+// To parse this JSON data, do
+//
+//     final singleApi = singleApiFromJson(jsonString);
 
-@JsonSerializable()
+import 'dart:convert';
+
+SingleApi singleApiFromJson(String str) => SingleApi.fromJson(json.decode(str));
+
+String singleApiToJson(SingleApi data) => json.encode(data.toJson());
+
 class SingleApi {
-  String? data;
-  String? support;
-  SingleApi({this.data, this.support});
-  factory SingleApi.fromJson(Map<String, dynamic> json) =>
-      _$SingleApiFromJson(json);
-  Map<String, dynamic> toJson() => _$SingleApiToJson(this);
+  SingleApi({
+    this.name,
+    this.phoneNumber,
+  });
+
+  String? name;
+  int? phoneNumber;
+
+  factory SingleApi.fromJson(Map<String, dynamic> json) => SingleApi(
+        name: json["name"],
+        phoneNumber: json["phone_number"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "name": name,
+        "phone_number": phoneNumber,
+      };
 }
