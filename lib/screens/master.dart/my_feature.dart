@@ -28,7 +28,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                  primary: Theme.of(context).colorScheme.onPrimary,
                   backgroundColor: Colors.blueAccent.shade400,
                   minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
@@ -47,7 +47,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                  primary: Theme.of(context).colorScheme.onPrimary,
                   backgroundColor: Theme.of(context).colorScheme.primary,
                   minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
@@ -66,7 +66,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                  primary: Theme.of(context).colorScheme.onPrimary,
                   backgroundColor: Colors.amber,
                   minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
@@ -85,7 +85,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                  primary: Theme.of(context).colorScheme.onPrimary,
                   backgroundColor: Colors.red, minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
@@ -103,7 +103,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                  primary: Theme.of(context).colorScheme.onPrimary,
                   backgroundColor: Colors.blueAccent.shade400,
                   minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
@@ -122,7 +122,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                  primary: Theme.of(context).colorScheme.onPrimary,
                   backgroundColor: Colors.deepPurple,
                   minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
