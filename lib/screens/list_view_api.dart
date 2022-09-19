@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:retry_build_api/model/list_view_model.dart';
+import 'package:retry_build_api/model/list_view_api_model.dart';
 
 class MyListView extends StatefulWidget {
   const MyListView({Key? key}) : super(key: key);

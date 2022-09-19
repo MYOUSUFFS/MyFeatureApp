@@ -1,6 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:retry_build_api/model/list_view_api_model.dart';
 
 class MyFirstList extends StatefulWidget {
   const MyFirstList({super.key});
@@ -10,6 +14,24 @@ class MyFirstList extends StatefulWidget {
 }
 
 class _MyFirstListState extends State<MyFirstList> {
+  ListViewData myListview = ListViewData();
+  bool isLoaded = false;
+  getData() async {
+    var request = await http.get(Uri.parse("https://reqres.in/api/unknown"));
+    var response = json.decode(request.body);
+
+    setState(() {
+      myListview = ListViewData.fromJson(response);
+      isLoaded = true;
+    });
+  }
+
+  @override
+  void initState() {
+    getData();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +40,7 @@ class _MyFirstListState extends State<MyFirstList> {
           padding: EdgeInsets.all(8),
           color: Colors.grey.shade300,
           child: ListView.builder(
-            itemCount: 5,
+            itemCount: myListview.data?.length,
             itemBuilder: (context, index) => Container(
               padding: EdgeInsets.all(8),
               // color: Colors.white,
@@ -27,7 +49,7 @@ class _MyFirstListState extends State<MyFirstList> {
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
-                      Text("data1"),
+                      Text("${myListview.data?[index].id}"),
                       SizedBox(
                         width: 8,
                       ),
