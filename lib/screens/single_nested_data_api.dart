@@ -4,7 +4,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:retry_build_api/model/little_big_model.dart';
+import 'package:retry_build_api/model/single_nested_model.dart';
 import 'package:retry_build_api/model/single_api_model.dart';
 
 class LittleBigApi extends StatefulWidget {
@@ -19,14 +19,14 @@ class _LittleBigApiState extends State<LittleBigApi> {
   SingleApi nasted2 = SingleApi();
   bool isLoaded = false;
   getData() async {
-    var required = await http.get(
+    var request = await http.get(
       Uri.parse("https://reqres.in/api/users/2"),
     );
-    var required2 = await http.get(
+    var request2 = await http.get(
       Uri.parse("http://0.0.0.0:3001/single_api"),
     );
-    var response = json.decode(required.body);
-    var response2 = json.decode(required2.body);
+    var response = json.decode(request.body);
+    var response2 = json.decode(request2.body);
     setState(() {
       nasted = LittleBig.fromJson(response);
       nasted2 = SingleApi.fromJson(response2);
