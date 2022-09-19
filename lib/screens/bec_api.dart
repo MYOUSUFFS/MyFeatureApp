@@ -227,8 +227,7 @@ class _MyJobsState extends State<MyJobs> {
                     child: TextButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                          foregroundColor: MaterialStateProperty.all(Colors.white),
                           backgroundColor:
                               MaterialStateProperty.all<Color>(Colors.green)),
                       child: Text("Accept"),
@@ -240,8 +239,7 @@ class _MyJobsState extends State<MyJobs> {
                     child: TextButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                          foregroundColor: MaterialStateProperty.all(Colors.white),
                           backgroundColor:
                               MaterialStateProperty.all<Color>(Colors.red)),
                       child: Text("Decline"),
@@ -257,7 +255,6 @@ class _MyJobsState extends State<MyJobs> {
   }
 
   addressText() {
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: const [
