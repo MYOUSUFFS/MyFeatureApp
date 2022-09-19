@@ -2,12 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:retry_build_api/screens/bec_api.dart';
-import 'package:retry_build_api/screens/list_view_api.dart';
-import 'package:retry_build_api/screens/single_nested_data_api.dart';
+import 'package:retry_build_api/screens/list_view.dart';
+import 'package:retry_build_api/screens/little_big_single_api.dart';
 import 'package:retry_build_api/screens/pdf_downloaded.dart';
 import 'package:retry_build_api/screens/single_api_handle.dart';
 
 import '../flight_api_screen.dart';
+import '../list_view_api.dart';
 import '../login_page.dart';
 
 class MyFeature extends StatefulWidget {
@@ -29,8 +30,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  primary: Theme.of(context).colorScheme.onPrimary,
-                  backgroundColor: Colors.blueAccent.shade400,
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.blueAccent.shade400,
                   minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
@@ -48,8 +48,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  primary: Theme.of(context).colorScheme.onPrimary,
-                  backgroundColor: Theme.of(context).colorScheme.primary,
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Theme.of(context).colorScheme.primary,
                   minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
@@ -67,8 +66,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  primary: Theme.of(context).colorScheme.onPrimary,
-                  backgroundColor: Colors.amber,
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.amber,
                   minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
@@ -86,8 +84,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  primary: Theme.of(context).colorScheme.onPrimary,
-                  backgroundColor: Colors.red, minimumSize: Size.fromHeight(50),
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.red, minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
                   Navigator.of(context).push(
@@ -104,8 +101,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  primary: Theme.of(context).colorScheme.onPrimary,
-                  backgroundColor: Colors.blueAccent.shade400,
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.blueAccent.shade400,
                   minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
@@ -123,8 +119,7 @@ class _MyFeatureState extends State<MyFeature> {
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  primary: Theme.of(context).colorScheme.onPrimary,
-                  backgroundColor: Colors.deepPurple,
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.deepPurple,
                   minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
@@ -135,15 +130,33 @@ class _MyFeatureState extends State<MyFeature> {
                   );
                 },
                 child: const Text(
-                  'Single Nested Data',
+                  'Little Big Data Set',
                 ),
               ),
               heightShotCut(10),
               TextButton(
                 style: TextButton.styleFrom(
                   // Foreground color
-                  primary: Theme.of(context).colorScheme.onPrimary,
-                  backgroundColor: Colors.indigoAccent,
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                  backgroundColor: Colors.brown,
+                  minimumSize: Size.fromHeight(50),
+                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const MyFirstList(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'List View',
+                ),
+              ),
+              heightShotCut(10),
+              TextButton(
+                style: TextButton.styleFrom(
+                  // Foreground color
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.indigoAccent,
                   minimumSize: Size.fromHeight(50),
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () {
