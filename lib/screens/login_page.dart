@@ -11,9 +11,11 @@ class MyLogIn extends StatefulWidget {
 class _MyLogInState extends State<MyLogIn> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: homePageFunction(),
+    return Scaffold(
+      body: homePageFunction(),
     );
   }
+
   SafeArea homePageFunction() {
     return SafeArea(
       child: Container(
@@ -53,8 +55,7 @@ class _MyLogInState extends State<MyLogIn> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 // Foreground color
-                foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                backgroundColor: Theme.of(context).colorScheme.primary,
+                foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Theme.of(context).colorScheme.primary,
               ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
               onPressed: () {
                 Navigator.of(context).push(
@@ -71,6 +72,7 @@ class _MyLogInState extends State<MyLogIn> {
     );
   }
 }
+
 SizedBox heightShotCut(double x) => SizedBox(
       height: x,
     );
