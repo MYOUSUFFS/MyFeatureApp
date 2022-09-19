@@ -13,6 +13,7 @@ class MyListView extends StatefulWidget {
 
 class _MyListViewState extends State<MyListView> {
   ListViewData listData = ListViewData();
+  bool isLoaded = false;
   getdata() async {
     var request = await http.get(
       Uri.parse("https://reqres.in/api/unknown"),
@@ -20,6 +21,7 @@ class _MyListViewState extends State<MyListView> {
     var response = json.decode(request.body);
     setState(() {
       listData = ListViewData.fromJson(response);
+      isLoaded = true;
       print(listData.data![0].id);
     });
   }
@@ -34,18 +36,21 @@ class _MyListViewState extends State<MyListView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ListView.builder(
-          itemCount: listData.data?.length,
-          itemBuilder: (BuildContext context, int index) {
-            return ListTile(
-              leading: const Icon(Icons.list),
-              trailing: const Text(
-                "GFG",
-                style: TextStyle(color: Colors.green, fontSize: 15),
-              ),
-              title: Text("${listData.data?[index].name}"),
-            );
-          },
+        child: Visibility(
+          visible: isLoaded,
+          child: ListView.builder(
+            itemCount: listData.data?.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: const Icon(Icons.list),
+                trailing: const Text(
+                  "GFG",
+                  style: TextStyle(color: Colors.green, fontSize: 15),
+                ),
+                title: Text("${listData.data?[index].name}"),
+              );
+            },
+          ),
         ),
       ),
     );
