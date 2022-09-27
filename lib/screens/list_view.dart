@@ -19,7 +19,6 @@ class _MyFirstListState extends State<MyFirstList> {
   getData() async {
     var request = await http.get(Uri.parse("https://reqres.in/api/unknown"));
     var response = json.decode(request.body);
-
     setState(() {
       myListview = ListViewData.fromJson(response);
       isLoaded = true;
