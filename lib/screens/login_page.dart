@@ -73,9 +73,9 @@ class _MyLogInState extends State<MyLogIn> {
   }
 }
 
-SizedBox heightShotCut(double x) => SizedBox(
+Widget heightShotCut(double x) => SizedBox(
       height: x,
     );
-SizedBox widthShotCut(double x) => SizedBox(
+Widget widthShotCut(double x) => SizedBox(
       width: x,
     );
