@@ -30,7 +30,6 @@ class _MyFeatureState extends State<MyFeature> {
               heightShotCut(30),
               doubleBox(
                 nextButton('Login Page', Colors.blueAccent.shade400, MyLogIn()),
-                widthShotCut(30),
                 nextButton('Pdf => Create Download open',
                     Theme.of(context).colorScheme.primary, PdfDownloader()),
               ),
@@ -38,21 +37,18 @@ class _MyFeatureState extends State<MyFeature> {
               doubleBox(
                 nextButton(
                     'Click TO Flight API Screen', Colors.amber, MyFlightApi()),
-                widthShotCut(30),
                 nextButton('BEC Job Screen', Colors.red, MyJobs()),
               ),
               heightShotCut(30),
               doubleBox(
                 nextButton('Single Data Set', Colors.blueAccent.shade400,
                     SingleAPIdata()),
-                widthShotCut(30),
                 nextButton(
                     'Little Big Data Set', Colors.deepPurple, LittleBigApi()),
               ),
               heightShotCut(30),
               doubleBox(
                 nextButton('List View', Colors.brown, MyFirstList()),
-                widthShotCut(30),
                 nextButton(
                     'List view builder', Colors.indigoAccent, MyListView()),
               ),
@@ -61,17 +57,6 @@ class _MyFeatureState extends State<MyFeature> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget doubleBox(leftBox, gap, rightBox) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        leftBox,
-        gap,
-        rightBox,
-      ],
     );
   }
 
@@ -99,6 +84,17 @@ class _MyFeatureState extends State<MyFeature> {
         textAlign: TextAlign.center,
         // maxLines: null,
       ),
+    );
+  }
+
+  Widget doubleBox(leftBox, rightBox) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        leftBox,
+        widthShotCut(30),
+        rightBox,
+      ],
     );
   }
 }
