@@ -22,7 +22,7 @@ class _MyListViewState extends State<MyListView> {
     setState(() {
       listData = ListViewData.fromJson(response);
       isLoaded = true;
-      print(listData.data![0].id);
+      debugPrint((listData.data![0].id).toString());
     });
   }
 

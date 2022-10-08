@@ -162,7 +162,7 @@ class Arrival {
   String? gate;
   String? baggage;
   int? delay;
-  String? scheduled;
+  DateTime? scheduled;
   String? estimated;
   String? actual;
   String? estimatedRunway;
@@ -177,7 +177,9 @@ class Arrival {
         gate: json["gate"],
         baggage: json["baggage"],
         delay: json["delay"],
-        scheduled: json["scheduled"],
+        scheduled: json["scheduled"] == null
+            ? null
+            : DateTime.parse(json["scheduled"]),
         estimated: json["estimated"],
         actual: json["actual"],
         estimatedRunway: json["estimated_runway"],
@@ -193,7 +195,7 @@ class Arrival {
         "gate": gate,
         "baggage": baggage,
         "delay": delay,
-        "scheduled": scheduled,
+        "scheduled": scheduled?.toIso8601String(),
         "estimated": estimated,
         "actual": actual,
         "estimated_runway": estimatedRunway,

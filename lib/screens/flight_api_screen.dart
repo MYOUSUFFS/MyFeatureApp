@@ -93,7 +93,7 @@ class _MyFlightApiState extends State<MyFlightApi> {
                                       Text(
                                           "IATA code : ${view.data?[index].departure?.timezone}"),
                                       Text(
-                                          "Flight delay : ${view.data?[index].airline?.name}"),
+                                          "Scheduled : ${view.data?[index].departure?.scheduled}"),
                                     ],
                                   ),
                                 ),
