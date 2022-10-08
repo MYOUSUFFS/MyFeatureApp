@@ -23,158 +23,78 @@ class _MyFeatureState extends State<MyFeature> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextButton(
-                style: TextButton.styleFrom(
-                  // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.blueAccent.shade400,
-                  minimumSize: Size.fromHeight(50),
-                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const MyLogIn(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  'Login Page',
-                ),
+              heightShotCut(30),
+              doubleBox(
+                nextButton('Login Page', Colors.blueAccent.shade400, MyLogIn()),
+                nextButton('Pdf => Create Download open',
+                    Theme.of(context).colorScheme.primary, PdfDownloader()),
               ),
-              heightShotCut(10),
-              TextButton(
-                style: TextButton.styleFrom(
-                  // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Theme.of(context).colorScheme.primary,
-                  minimumSize: Size.fromHeight(50),
-                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const PdfDownloader(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  'Pdf => Create Download open',
-                ),
+              heightShotCut(30),
+              doubleBox(
+                nextButton(
+                    'Click TO Flight API Screen', Colors.amber, MyFlightApi()),
+                nextButton('BEC Job Screen', Colors.red, MyJobs()),
               ),
-              heightShotCut(10),
-              TextButton(
-                style: TextButton.styleFrom(
-                  // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.amber,
-                  minimumSize: Size.fromHeight(50),
-                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const MyFlightApi(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  'Click TO Flight API Screen',
-                ),
+              heightShotCut(30),
+              doubleBox(
+                nextButton('Single Data Set', Colors.blueAccent.shade400,
+                    SingleAPIdata()),
+                nextButton(
+                    'Little Big Data Set', Colors.deepPurple, LittleBigApi()),
               ),
-              heightShotCut(10),
-              TextButton(
-                style: TextButton.styleFrom(
-                  // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.red, minimumSize: Size.fromHeight(50),
-                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const MyJobs(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  'BEC Job Screen',
-                ),
+              heightShotCut(30),
+              doubleBox(
+                nextButton('List View', Colors.brown, MyFirstList()),
+                nextButton(
+                    'List view builder', Colors.indigoAccent, MyListView()),
               ),
-              heightShotCut(10),
-              TextButton(
-                style: TextButton.styleFrom(
-                  // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.blueAccent.shade400,
-                  minimumSize: Size.fromHeight(50),
-                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const SingleAPIdata(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  'Single Data Set',
-                ),
-              ),
-              heightShotCut(10),
-              TextButton(
-                style: TextButton.styleFrom(
-                  // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.deepPurple,
-                  minimumSize: Size.fromHeight(50),
-                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const LittleBigApi(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  'Little Big Data Set',
-                ),
-              ),
-              heightShotCut(10),
-              TextButton(
-                style: TextButton.styleFrom(
-                  // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                  backgroundColor: Colors.brown,
-                  minimumSize: Size.fromHeight(50),
-                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const MyFirstList(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  'List View',
-                ),
-              ),
-              heightShotCut(10),
-              TextButton(
-                style: TextButton.styleFrom(
-                  // Foreground color
-                  foregroundColor: Theme.of(context).colorScheme.onPrimary, backgroundColor: Colors.indigoAccent,
-                  minimumSize: Size.fromHeight(50),
-                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const MyListView(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  'List view builder',
-                ),
-              ),
-              heightShotCut(10),
+              heightShotCut(30),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget nextButton(String val, color, jumb) {
+    return TextButton(
+      style: TextButton.styleFrom(
+        // Foreground color
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        backgroundColor: color,
+        fixedSize: Size(125, 175),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        // minimumSize: Size.fromHeight(50),
+      )
+      // .copyWith(elevation: ButtonStyleButton.allOrNull(0.0))
+      ,
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => jumb,
+          ),
+        );
+      },
+      child: Text(
+        val,
+        textAlign: TextAlign.center,
+        // maxLines: null,
+      ),
+    );
+  }
+
+  Widget doubleBox(leftBox, rightBox) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        leftBox,
+        widthShotCut(30),
+        rightBox,
+      ],
     );
   }
 }
