@@ -35,33 +35,37 @@ class _MyFirstListState extends State<MyFirstList> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(8),
-          color: Colors.grey.shade300,
-          child: ListView.builder(
-            itemCount: myListview.data?.length,
-            itemBuilder: (context, index) => Container(
-              padding: EdgeInsets.all(8),
-              // color: Colors.white,
-              child: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Text("${myListview.data?[index].id}"),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text("data2")
-                    ],
-                  ),
+        child: isLoaded?listViewBuilderApi():Center(child: CircularProgressIndicator(),),
+      ),
+    );
+  }
+
+  Container listViewBuilderApi() {
+    return Container(
+        padding: EdgeInsets.all(8),
+        color: Colors.grey.shade300,
+        child: ListView.builder(
+          itemCount: myListview.data?.length,
+          itemBuilder: (context, index) => Container(
+            padding: EdgeInsets.all(8),
+            // color: Colors.white,
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Text("${myListview.data?[index].id}"),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text("${myListview.data?[index].name}")
+                  ],
                 ),
               ),
             ),
-            // children: [Text("data1"), Text("data2")],
           ),
+          // children: [Text("data1"), Text("data2")],
         ),
-      ),
-    );
+      );
   }
 }

@@ -18,9 +18,9 @@ class _MyFlightApiState extends State<MyFlightApi> {
   MyFlightApiModel view = MyFlightApiModel();
   getFlightApi() async {
     var request = await http.get(
-      Uri.parse("http://localhost:3002/flight/api/multi"),
-      // Uri.parse(
-      //     "http://api.aviationstack.com/v1/flights?access_key=ded1655ad569ba243bd2fa9b46739c0f"),
+      // Uri.parse("http://localhost:3002/flight/api/multi"),
+      Uri.parse(
+          "http://api.aviationstack.com/v1/flights?access_key=ded1655ad569ba243bd2fa9b46739c0f"),
     );
     var response = json.decode(request.body);
     // debugPrint(response.toString());

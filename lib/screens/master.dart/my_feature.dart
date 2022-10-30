@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:retry_build_api/screens/bec_api.dart';
@@ -26,69 +26,101 @@ class _MyFeatureState extends State<MyFeature> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              heightShotCut(30),
-              doubleBox(
+          child: Center(
+            child: Wrap(
+              children: [
                 nextButton('Login Page', Colors.blueAccent.shade400, MyLogIn()),
                 nextButton('Pdf => Create Download open',
                     Theme.of(context).colorScheme.primary, PdfDownloader()),
-              ),
-              heightShotCut(30),
-              doubleBox(
                 nextButton(
                     'Click TO Flight API Screen', Colors.amber, MyFlightApi()),
                 nextButton('BEC Job Screen', Colors.red, MyJobs()),
-              ),
-              heightShotCut(30),
-              doubleBox(
-                nextButton('Single Data Set', Colors.blueAccent.shade400,
-                    SingleAPIdata()),
-                nextButton(
-                    'Little Big Data Set', Colors.deepPurple, LittleBigApi()),
-              ),
-              heightShotCut(30),
-              doubleBox(
+                nextButtonOverText('Single Data Set', '(It\'s not Work)',
+                    Colors.blueAccent.shade400, SingleAPIdata()),
+                nextButtonOverText(
+                    'Little Big Data Set','(It\'s not Work)', Colors.deepPurple, LittleBigApi()),
                 nextButton('List View', Colors.brown, MyFirstList()),
                 nextButton(
                     'List view builder', Colors.indigoAccent, MyListView()),
-              ),
-              heightShotCut(30),
-              doubleBox(
-                  nextButton('Drop Down SetState', Colors.cyan, MyDropDown()),
-                  nextButton('State', Colors.blue[300], PlusMinos())),
-              heightShotCut(30),
-            ],
+                nextButton('Drop Down SetState', Colors.cyan, MyDropDown()),
+                nextButton('State', Colors.blue[300], PlusMinos())
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
+  Widget nextButtonOverText(text1, text2, color, jumb) {
+    return Padding(
+      padding: const EdgeInsets.all(3.0),
+      child: TextButton(
+        style: TextButton.styleFrom(
+          // Foreground color
+          foregroundColor: Theme.of(context).colorScheme.onPrimary,
+          backgroundColor: color,
+          fixedSize: Size(125, 175),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          // minimumSize: Size.fromHeight(50),
+        )
+        // .copyWith(elevation: ButtonStyleButton.allOrNull(0.0))
+        ,
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => jumb,
+            ),
+          );
+        },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              text1,
+              textAlign: TextAlign.center,
+              // maxLines: null,
+            ),
+            Text(
+              text2,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 12, color: Colors.red),
+              // maxLines: null,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget nextButton(String val, color, jumb) {
-    return TextButton(
-      style: TextButton.styleFrom(
-        // Foreground color
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
-        backgroundColor: color,
-        fixedSize: Size(125, 175),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        // minimumSize: Size.fromHeight(50),
-      )
-      // .copyWith(elevation: ButtonStyleButton.allOrNull(0.0))
-      ,
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => jumb,
-          ),
-        );
-      },
-      child: Text(
-        val,
-        textAlign: TextAlign.center,
-        // maxLines: null,
+    return Container(
+      padding: EdgeInsets.all(3.0),
+      child: TextButton(
+        style: TextButton.styleFrom(
+          // Foreground color
+          foregroundColor: Theme.of(context).colorScheme.onPrimary,
+          backgroundColor: color,
+          fixedSize: Size(125, 175),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          // minimumSize: Size.fromHeight(50),
+        )
+        // .copyWith(elevation: ButtonStyleButton.allOrNull(0.0))
+        ,
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => jumb,
+            ),
+          );
+        },
+        child: Text(
+          val,
+          textAlign: TextAlign.center,
+          // maxLines: null,
+        ),
       ),
     );
   }

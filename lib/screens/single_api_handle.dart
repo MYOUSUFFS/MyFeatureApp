@@ -23,9 +23,9 @@ class _SingleAPIdataState extends State<SingleAPIdata> {
 
   getResponse() async {
     var request = await http.get(
-      Uri.parse("http://0.0.0.0:3001/single_api"), /*TODO This local ip is iOS*/
+      // Uri.parse("http://0.0.0.0:3001/single_api"), /*TODO This local ip is iOS*/
 
-      // Uri.parse("http://10.0.2.2:3001/single_api"), /*TODO This local ip is Android */
+      Uri.parse("http://10.0.2.2:3001/single_api"), /*TODO This local ip is Android */
     );
     var response = json.decode(request.body);
     // print(response);
