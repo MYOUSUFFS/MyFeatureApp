@@ -14,6 +14,7 @@ import '../firebase/firebase.dart';
 import '../flight_api_screen.dart';
 import '../list_view_api.dart';
 import '../login_page.dart';
+import '../paytm/paytm.dart';
 
 class MyFeature extends StatefulWidget {
   const MyFeature({Key? key}) : super(key: key);
@@ -46,7 +47,8 @@ class _MyFeatureState extends State<MyFeature> {
                     'List view builder', Colors.indigoAccent, MyListView()),
                 nextButton('Drop Down SetState', Colors.cyan, MyDropDown()),
                 nextButton('State', Colors.blue[300], PlusMinos()),
-                nextButton('FireBase', Colors.yellow[700], Firebase())
+                nextButton('FireBase', Colors.yellow[700], Firebase()),
+                nextButton('Paytm', Colors.blueAccent, Paytm())
               ],
             ),
           ),
