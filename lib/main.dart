@@ -1,10 +1,23 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:retry_build_api/screens/my_home.dart';
 import 'package:provider/provider.dart';
 import 'package:retry_build_api/screens/todo.dart';
 
+import 'provider/movie_provider.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<MovieOtherProvider>(
+          create: (_) => MovieOtherProvider(),
+        )
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
