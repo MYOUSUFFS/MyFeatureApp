@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:retry_build_api/screens/my_home.dart';
+import 'package:provider/provider.dart';
+import 'package:retry_build_api/screens/todo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,12 +17,15 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        colorSchemeSeed: Colors.blue,
+    return ChangeNotifierProvider(
+      create: (context) => TodoListModel(),
+      child: MaterialApp(
+        theme: ThemeData(
+          colorSchemeSeed: Colors.blue,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: const Myhome(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: const Myhome(),
     );
   }
 }
