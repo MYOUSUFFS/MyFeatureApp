@@ -1,20 +1,20 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:retry_build_api/screens/bec_api.dart';
-import 'package:retry_build_api/screens/drop_down_setstate.dart';
-import 'package:retry_build_api/screens/list_view.dart';
-import 'package:retry_build_api/screens/little_big_single_api.dart';
-import 'package:retry_build_api/screens/pdf_downloaded.dart';
-import 'package:retry_build_api/screens/plus_minos.dart';
-import 'package:retry_build_api/screens/single_api_handle.dart';
+import 'package:retry_build_api/screens/view/bec_api.dart';
+import 'package:retry_build_api/screens/view/drop_down_setstate.dart';
+import 'package:retry_build_api/screens/view/list_view.dart';
+import 'package:retry_build_api/screens/view/little_big_single_api.dart';
+import 'package:retry_build_api/screens/view/pdf_downloaded.dart';
+import 'package:retry_build_api/screens/view/plus_minos.dart';
+import 'package:retry_build_api/screens/view/single_api_handle.dart';
 
 
-import '../flight_api_screen.dart';
-import '../list_view_api.dart';
-import '../login_page.dart';
-import '../todo.dart';
-import '../whatsapp.dart';
+import '../view/flight_api_screen.dart';
+import '../view/list_view_api.dart';
+import '../view/login_page.dart';
+import '../view/todo.dart';
+import '../view/whatsapp.dart';
 
 class MyFeature extends StatefulWidget {
   const MyFeature({Key? key}) : super(key: key);

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:retry_build_api/model/single_api_model.dart';
 
-import '../model/single_nested_model.dart';
+import '../../model/single_nested_model.dart';
 
 class LittleBigApi extends StatefulWidget {
   const LittleBigApi({super.key});

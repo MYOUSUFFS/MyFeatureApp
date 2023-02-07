@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'master.dart/my_feature.dart';
+import '../master.dart/my_feature.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class MyLogIn extends StatefulWidget {

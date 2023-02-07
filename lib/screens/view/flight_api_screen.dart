@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import '../model/flight_api_model.dart';
+import '../../model/flight_api_model.dart';
 
 class MyFlightApi extends StatefulWidget {
   const MyFlightApi({Key? key}) : super(key: key);

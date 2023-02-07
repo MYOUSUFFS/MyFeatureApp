@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WhatsappWeb extends StatefulWidget {
@@ -44,14 +42,15 @@ class _WhatsappWebState extends State<WhatsappWeb> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: WebviewScaffold(
-          url: 'https://web.whatsapp.com/',
-          withZoom: true,
-          withLocalStorage: true,
-          withJavascript: true,
-          userAgent:
-              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko Chrome/90.0.4324.150 Safari/537.36',
-        ),
+        child: Text("data")
+        // WebviewScaffold(
+        //   url: 'https://web.whatsapp.com/',
+        //   withZoom: true,
+        //   withLocalStorage: true,
+        //   withJavascript: true,
+        //   userAgent:
+        //       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko Chrome/90.0.4324.150 Safari/537.36',
+        // ),
       ),
     );
   }
